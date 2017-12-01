@@ -6,15 +6,6 @@ $(function () {
 
     var picturesUrl = 'https://api.nasa.gov/planetary/apod?api_key=gtyU9XnD6AhWCM2Gn35INu37Mv5FlPAzXRVwICaM&date';
 
-
-  //  function insertPictures() {
-  //      var div = $('.pict_day');
-  //      var picture = $('<img src= picturesUrl' + response.url + '>');
-   //     div.append(picture);
-
-     //   }
-
-
     function loadPicture() {
         var $ajax = $.ajax({
             url: picturesUrl,
@@ -26,10 +17,13 @@ $(function () {
             console.log(response);
             console.log(response.url);
             function insertPicture() {
-                var div = $('.pict_day');
+              /*  var div = $('.pict_day');
                 var picture = $('<img src=' + response.url + '>');
-                div.append(picture);
-                console.log(picture);
+               div.append(picture);
+                console.log(picture);*/
+
+
+                $('#welcome').css('background-image', 'url(' + response.url + ')');
             }
             insertPicture();
         });
@@ -40,9 +34,10 @@ $(function () {
 
     }
 
-
     loadPicture();
 
+
+  //loading Mars pictures
 
 
 });
